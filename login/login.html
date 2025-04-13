@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div class="form-container" id="login-form">
+            <h2>Login</h2>
+            <input type="text" id="loginId" placeholder="Enter College ID / User ID">
+            <input type="password" id="loginPassword" placeholder="Enter Password">
+            <button onclick="login()">Login</button>
+            <p>Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a></p>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="form-container hidden" id="signup-form">
+            <h2>Sign Up</h2>
+            <input type="text" id="name" placeholder="Full Name">
+            <input type="text" id="mobile" placeholder="Mobile Number">
+            <input type="email" id="email" placeholder="Email">
+            <input type="username" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            
+            <!-- Education Dropdown -->
+            <select id="education" onchange="toggleCourseInput()">
+                <option value="">Select Education</option>
+                <option value="10th">10th</option>
+                <option value="12th">12th</option>
+                <option value="Graduation">Graduation</option>
+                <option value="Post Graduation">Post Graduation</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="text" id="course" placeholder="Enter Your Course" class="hidden">
+
+            <button onclick="sendOTP()">Send OTP</button>
+            <input type="text" id="otp" placeholder="Enter OTP" disabled>
+            
+            <button onclick="signup()" disabled id="signupBtn">Sign Up</button>
+            <p>Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>
+        </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p id="popup-message"></p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

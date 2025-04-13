@@ -1,0 +1,296 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>AI Chat Bot</title>
+    <link rel="icon" type="image/x-icon" href="ai.png">
+    <meta property="og:title" content="AI Chat Bot">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="ai.png">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1282">
+    <meta property="og:url" content="https://dprdigitalinnovations.com/AI-Chat-Bot/Chat-Bot.php">
+
+
+<script>
+//   (function() {
+//     var before = new Date().getTime();
+//     debugger; // Pauses script execution if dev tools are open
+//     var after = new Date().getTime();
+
+//     // Check if there's a significant delay due to dev tools
+//     if (after - before > 100) {
+//       window.location.href = "about:blank"; // Redirect if developer tools are open
+//     }
+//   })();
+// </script>
+
+ <script>
+//   // Disable right-click context menu
+//   document.addEventListener('contextmenu', function(e) {
+//     e.preventDefault();
+//   });
+
+//   // Disable F12 (Inspect Element), Ctrl+Shift+I (Dev Tools), and Ctrl+U (View Source)
+//   document.addEventListener('keydown', function(e) {
+//     // Disable F12 key
+//     if (e.keyCode === 123) {
+//       e.preventDefault();
+//       return false;
+//     }
+
+//     // Disable Ctrl+Shift+I and Ctrl+U
+//     if ((e.ctrlKey && e.shiftKey && e.keyCode === 73) || (e.ctrlKey && e.keyCode === 85)) {
+//       e.preventDefault();
+//       return false;
+//     }
+//   });
+// </script>
+
+
+
+</head>
+
+
+
+
+<style>
+
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body
+{
+width: 100%;
+height: 100vh;
+}
+
+#logout
+{
+position:absolute;
+right:3rem;
+top:2rem;
+position:fixed;
+width:50px;
+height:50px;
+cursor:pointer;
+z-index:999;
+}
+
+.chat-container
+{
+width: 100%;
+height: 80%;
+background-color: rgb(45, 52, 59);
+display: flex;
+flex-direction: column;
+gap: 20px;
+overflow: auto;
+}
+
+.user-chat-box
+{
+width: 60%;
+position: relative;
+left: 40%;
+padding: 20px;
+}
+
+.ai-chat-box
+{
+width: 60%;
+position: relative;
+padding: 20px;
+}
+
+.user-chat-area
+{
+width: 93%;
+padding: 20px;
+background-color: black;
+color: rgba(255, 255, 255, 0.639);
+border-radius: 40px 0px 40px 40px;
+box-shadow: 2px 2px 10px black;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.ai-chat-area
+{
+width: 90%;
+padding: 20px;
+background-color: rgba(0, 0, 0, 0.361);
+position: relative;
+left: 10%;
+color: rgba(255, 255, 255, 0.639);
+border-radius: 0px 40px 40px 40px;
+box-shadow: 2px 2px 10px black;
+}
+
+#userImage
+{
+position: absolute;
+right: 0;
+filter: drop-shadow(2px 2px 10px black);
+}
+
+#aiImage
+{
+position: absolute;
+left: 0;
+filter: drop-shadow(2px 2px 10px black);
+}
+
+.prompt-area
+{
+width: 100%;
+height: 20%;
+background-color:rgb(45, 52, 59);
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+}
+
+.prompt-area input
+{
+width: 50%;
+height: 60px;
+background-color: black;
+border: none;
+outline: none;
+border-radius: 50px;
+padding: 20px;
+color: white;
+font-size: 20px;
+box-shadow: 2px 2px 10px black;
+}
+
+.prompt-area button
+{
+width: 50px;
+height: 50px;
+border-radius: 50%;
+background-color: black;
+border: none;
+box-shadow: 2px 2px 10px black;
+cursor: pointer;
+transition: all 0.5s;
+}
+.prompt-area button:hover
+{
+background-color: rgba(0, 0, 0, 0.338);
+}
+
+.load
+{
+filter: drop-shadow(2px 2px 10px black);
+}
+
+.chooseimg
+{
+width: 30%;
+border-radius: 1rem;
+}
+
+.choose
+{
+width: 40px;
+height: 40px;
+border-radius: 50%;
+}
+#image
+{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+@media (max-width:600px) {
+ 
+.user-chat-box
+{
+width: 80%;
+left: 20%;
+padding: 0;
+padding-right: 13px;
+}
+
+.ai-chat-box
+{
+width: 80%;
+padding: 0;
+padding-left: 10px;
+}
+
+.chat-container
+{
+padding-top: 20px;
+}
+
+.prompt-area input
+{
+width: 60%;
+}
+
+.chooseimg
+{
+width: 50%;
+border-radius: 1rem;
+}
+
+#logout
+{
+position:absolute;
+right:1.5rem;
+top:2rem;
+position:fixed;
+width:40px;
+height:40px;
+cursor:pointer;
+}
+}
+</style>
+
+<body>
+
+
+
+    <div class="chat-container">
+
+        <div class="ai-chat-box">
+            <img src="ai.png" alt="" id="aiImage" width="11%">
+            <div class="ai-chat-area">
+                Hello ! How Can I Help you Today?
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div class="prompt-area">
+        <input type="text" id="prompt" placeholder="Message..." required>
+        <button id="image"><img src="img.svg" alt="">
+        <input type="file" accept="image/*" hidden></button>
+        <button id="submit"><img src="submit.svg" alt=""></button>
+    </div> 
+
+
+
+
+<script src="script.js"></script>   
+</body>
+</html>
+

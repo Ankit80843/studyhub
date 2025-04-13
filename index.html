@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHub - Group Study App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand logo" href="#">StudyHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="AI/index.html">A.I Help</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    
+                </ul>
+             
+
+            </div>
+            <button type="button" class="btn btn-info" > <a href="login/login.html">Login <i class="bi bi-person-fill"></i></a></button>
+
+          
+        </div>
+    </nav>
+
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero1 con1">
+            <div class="typewriter">
+                <h1>Welcome to StudyHub</h1>
+            </div>
+           
+            <div class="animated-text">
+                <span id="changing-text"></span>
+            </div>
+           
+            <a href="room.html" class="btn btn-warning">Get Started</a>
+        </div>
+    </section>
+    
+
+    
+
+    <!-- About Section -->
+    <section class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="/Assest/pic1.png" class="img-fluid rounded" alt="Group Study">
+                </div>
+                <div class="col-md-6">
+                    <h2>Why Choose StudyHub?</h2>
+                    <p>StudyHub is a collaborative platform designed for students to engage in group studies, share resources, and improve their learning experience.</p>
+                    <ul>
+                        <li>📚 Create & join study groups</li>
+                        <li>🎥 Video & Text Discussions</li>
+                        <li>💡 Share Notes & Resources</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section text-center text-white py-5">
+        <div class="stats">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="counter" data-target="5645">0</h2>
+                    <p>Active Users</p>
+                </div>
+                <div class="col-md-4">
+                    <h2 class="counter" data-target="561">0</h2>
+                    <p>Study Groups</p>
+                </div>
+                <div class="col-md-4">
+                    <h2 class="counter" data-target="6533">0</h2>
+                    <p>Shared Notes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="footer text-white text-center py-4">
+        <div class="container">
+            <p class="logo">StudyHub</p>
+            <p>&copy; 2024 StudyHub | All Rights Reserved</p>
+        </div>
+    </footer>
+<!-- Chatbot Button -->
+<div class="chatbot-btn">
+    <button onclick="toggleChatbot()" class="btn btn-primary">💬 Chat with us</button>
+</div>
+
+<!-- Chatbot Container -->
+<div class="chatbot-container" id="chatbot">
+    <div class="chatbot-header">
+        <h4>StudyHub Chatbot</h4>
+        <button onclick="toggleChatbot()" class="close-btn">&times;</button>
+    </div>
+    <div class="chatbot-body" id="chatbot-body">
+        <p>👋 Welcome to StudyHub! Ask me anything about StudyHub.</p>
+    </div>
+    <div class="chatbot-footer">
+        <input type="text" placeholder="Type a message..." id="user-input">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+   
+
+  <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
